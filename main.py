@@ -17,10 +17,12 @@ else:
 is_holiday = False
 is_weekend = True
 
-if is_holiday:
-    print("It's a holiday today")
-elif is_weekend:
-    print("It's a weekend today")
+if is_holiday and is_weekend:
+    print("It's a weekend holiday")
+
+elif is_holiday or is_weekend:
+    print("You can stay at home today")
+
 else:
     print("You have to work today")
 
