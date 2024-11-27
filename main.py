@@ -44,7 +44,7 @@ class Car:
         return f"{self.name}"
 
     def __del__(self):
-        pass
+        print(f"Car {self.get_name()} #{self.get_number()} deleted")
 
 def main():
     mercedes = Car("Mercedes", 300, 200, "M1", 1)
