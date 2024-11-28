@@ -10,6 +10,10 @@ def main():
     client.show_account()
 
     bank.add_account(client)
+    i = 1
+    for i in range(5):
+        acc = BankAccount(i+1, "Unknown", (i*5.0)**5.0)
+        bank.add_account(acc)
     bank.show_accounts()
 
 main()

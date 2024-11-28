@@ -43,6 +43,9 @@ class BankAccount:
     def __str__(self):
         return (f"{self.get_id()}, {self.get_owner_name()}, {self.get_balance()}")
     
+    def __del__(self):
+        return print("Object deleted")
+    
 class Bank:
     def __init__(self):
         self.accounts = []
@@ -71,4 +74,12 @@ class Bank:
     
     def show_accounts(self):
         for account in self.accounts:
-            print(account)
+            print(f"{account.get_id()}, {account.get_owner_name()}, {account.get_balance()}")
+
+    def __str__(self):
+        for acc in self.accounts:
+            print(acc)
+        return
+
+    def __del__(self):
+        return print("Bank destroyed")
