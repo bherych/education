@@ -1,5 +1,5 @@
 class BankAccount:
-    def __init__(self, id=0, owner_name="Unknown", balance=0.0):
+    def __init__(self, id, owner_name="Unknown", balance=0.0):
         self.__id = id
         self.__owner_name = owner_name
         self.__balance = balance
@@ -40,5 +40,35 @@ class BankAccount:
 
         return print(f"Succesfully substracted {float(money)} from the balance")
     
+    def __str__(self):
+        return (f"{self.get_id()}, {self.get_owner_name()}, {self.get_balance()}")
+    
 class Bank:
-    pass
+    def __init__(self):
+        self.accounts = []
+
+    def add_account(self, account: BankAccount):
+        if any(acc.get_id() == account.get_id() for acc in self.accounts):
+            print("Account with this ID already exists.")
+        else:
+            self.accounts.append(account)
+            print(f"Account {account.get_id()} added.")
+    
+    def remove_account(self, id):
+        for account in self.accounts:
+            if account.get_id() == account.get_id():
+                self.accounts.remove(account)
+                print(f"Account {id} removed.")
+                return
+    
+    def sort_accounts_by_balance(self):
+
+        def get_balance(acc):
+            return acc.balance
+        
+        self.accounts.sort(key=get_balance)
+        print("Accounts sorted by balance.")
+    
+    def show_accounts(self):
+        for account in self.accounts:
+            print(account)
