@@ -67,10 +67,19 @@ class Bank:
     def sort_accounts_by_balance(self):
 
         def get_balance(acc):
-            return acc.balance
+            return acc.get_balance()
         
         self.accounts.sort(key=get_balance)
         print("Accounts sorted by balance.")
+    
+    def sort_accounts_by_id(self):
+
+        def get_id(acc):
+            return acc.get_id()
+        
+        self.accounts.sort(key=get_id)
+        print("Accounts sorted by id.")
+    
     
     def show_accounts(self):
         for account in self.accounts:
