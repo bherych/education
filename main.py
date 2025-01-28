@@ -2,7 +2,7 @@ def sort_by_insertion_ascending(row):
     for i in range(1, len(row)):
         key = row[i]
         j = i - 1
-        while j >= 0 and row[j] > key:
+        while j >= 0 and row[j] < key:
             row[j + 1] = row[j]
             j -= 1
         row[j + 1] = key
@@ -22,6 +22,12 @@ def column_products(matrix):
 # Mean - середнє арифмертичне
 def mean(values):
     return sum(values) / len(values)
+
+matrix1 = []
+
+def sub_matrix(matrix1, matrix2):
+    
+    return
 
 matrix = [
         [90, 7, 89, -2, 17],
